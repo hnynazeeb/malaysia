@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Malaysia Tourist Expert Demo</title>
+    <meta
+      name="description"
+      content="Interactive Malaysia Tourist Expert demo with map-based regional quiz popups."
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <link rel="stylesheet" href="./malaysia-expert.css" />
+  </head>
+  <body>
+    <main class="game-page">
+      <header class="game-topbar">
+        <a class="back-link" href="./index.html">Back to Proposal</a>
+        <div class="topbar-copy">
+          <p class="eyebrow">Gamification Demo</p>
+          <h1>Malaysia Tourist Expert</h1>
+        </div>
+        <div class="score-pill">
+          <span>Score</span>
+          <strong id="scoreValue">0 / 4</strong>
+        </div>
+      </header>
+
+      <section class="game-hero">
+        <div class="map-frame hero-map-frame">
+          <div class="map-backdrop">
+            <div class="sea-glow sea-glow-a"></div>
+            <div class="sea-glow sea-glow-b"></div>
+            <div id="expertMap" class="expert-map" aria-label="Malaysia map"></div>
+            <div class="map-attribution-note">Interactive map view centered on Malaysia</div>
+          </div>
+        </div>
+
+        <aside class="question-side">
+          <div class="hero-copy">
+            <p class="eyebrow">How the game works</p>
+            <p>
+              Every question is linked to the area it appears from on the map. Agents learn the
+              destination visually, answer quickly, and move toward leaderboard rewards and fam trip
+              qualification.
+            </p>
+          </div>
+
+          <div class="progress-card">
+            <p class="eyebrow">Mission</p>
+            <strong>Answer all 4 regional questions correctly.</strong>
+            <span>Questions are linked to the exact area they appear from on the map.</span>
+          </div>
+
+          <article class="question-popup is-active" id="questionPopup">
+            <p class="question-step" id="questionStep">Question 1 of 4</p>
+            <h3 id="popupQuestion">Which iconic attraction is most closely linked with Kuala Lumpur?</h3>
+            <div class="answer-grid" id="answerGrid"></div>
+            <div class="popup-footer">
+              <p id="popupFeedback">Answer the question linked to the highlighted city on the map.</p>
+              <button class="next-button" id="nextButton" disabled>Continue</button>
+            </div>
+          </article>
+
+          <div class="legend-card">
+            <p class="eyebrow">Regional Trail</p>
+            <ul class="region-list" id="regionList">
+              <li class="is-current">Kuala Lumpur</li>
+              <li>Langkawi</li>
+              <li>Sabah</li>
+              <li>Sarawak</li>
+            </ul>
+          </div>
+        </aside>
+      </section>
+
+      <section class="ranking-section">
+        <div class="ranking-card">
+          <div class="ranking-head">
+            <div>
+              <p class="eyebrow">Leaderboard Preview</p>
+              <h3>Top Malaysia Expert agents</h3>
+            </div>
+            <span class="ranking-note">Names masked for demo presentation</span>
+          </div>
+          <div class="ranking-table">
+            <div class="ranking-row ranking-row-head">
+              <span>Rank</span>
+              <span>Agent Name</span>
+              <span>City</span>
+              <span>Score</span>
+            </div>
+            <div class="ranking-row">
+              <span>#1</span>
+              <span>Ar**** Kh****</span>
+              <span>Mumbai</span>
+              <span>4/4</span>
+            </div>
+            <div class="ranking-row">
+              <span>#2</span>
+              <span>Sa**** Me****</span>
+              <span>Delhi</span>
+              <span>4/4</span>
+            </div>
+            <div class="ranking-row">
+              <span>#3</span>
+              <span>Ne**** Sh****</span>
+              <span>Bengaluru</span>
+              <span>3/4</span>
+            </div>
+            <div class="ranking-row">
+              <span>#4</span>
+              <span>Ri**** Pa****</span>
+              <span>Hyderabad</span>
+              <span>3/4</span>
+            </div>
+            <div class="ranking-row">
+              <span>#5</span>
+              <span>Mo**** Al****</span>
+              <span>Dubai</span>
+              <span>3/4</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="completion-card" id="completionCard" hidden>
+        <p class="eyebrow">Completed</p>
+        <h3>You’ve completed the Malaysia Tourist Expert demo.</h3>
+        <p>
+          This can be extended with leaderboards, booking-linked scoring, certificates, and free
+          trip qualification for top-performing agents.
+        </p>
+      </section>
+    </main>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="./malaysia-expert.js"></script>
+  </body>
+</html>

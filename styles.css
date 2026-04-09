@@ -338,68 +338,113 @@ body::before {
   line-height: 1.8;
 }
 
-.partner-strip,
-.audience-cloud {
+.partner-strip {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
   margin-top: 20px;
 }
 
-.partner-strip span,
-.audience-cloud span {
+.partner-strip span {
   padding: 10px 14px;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.75);
   border: 1px solid rgba(22, 51, 48, 0.08);
 }
 
-.audience-cloud {
-  gap: 14px;
-}
-
-.audience-pill {
-  padding: 14px 18px !important;
-  font-weight: 700;
-  color: #163330;
-  border: 0 !important;
-  box-shadow: 0 14px 28px rgba(26, 51, 48, 0.08);
-}
-
-.audience-luxury {
-  background: linear-gradient(135deg, #ffd8a8, #ffefc7) !important;
-}
-
-.audience-leisure {
-  background: linear-gradient(135deg, #c5f0d5, #ebfff0) !important;
-}
-
-.audience-corporate {
-  background: linear-gradient(135deg, #d8e4ff, #eef3ff) !important;
-}
-
-.audience-groups {
-  background: linear-gradient(135deg, #ffe1dc, #fff0eb) !important;
-}
-
-.audience-cities {
-  background: linear-gradient(135deg, #f7dfb0, #fff2d4) !important;
-}
-
-.audience-global {
-  background: linear-gradient(135deg, #d3f0f4, #edfafe) !important;
-}
-
-.audience-ota {
-  background: linear-gradient(135deg, #eadbff, #f5efff) !important;
-}
-
-.audience-performance {
-  background: linear-gradient(135deg, #ffe0b8, #fff3dd) !important;
+.audience-section {
+  padding-top: 72px;
+  padding-bottom: 28px;
 }
 
 .section-heading {
   margin-bottom: 22px;
+}
+
+.audience-section .section-heading {
+  max-width: 720px;
+  margin-bottom: 30px;
+}
+
+.audience-section .section-heading h3 {
+  font-size: clamp(2.1rem, 3.6vw, 3.4rem);
+  line-height: 0.98;
+}
+
+.section-intro {
+  max-width: 48ch;
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 1.02rem;
+  line-height: 1.8;
+}
+
+.audience-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 10px;
+  margin-bottom: 14px;
+}
+
+.audience-card {
+  min-height: 172px;
+  padding: 24px 22px;
+  border-radius: 28px;
+  border: 1px solid rgba(22, 51, 48, 0.08);
+  box-shadow: 0 18px 36px rgba(26, 51, 48, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.audience-card span {
+  color: var(--text);
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+.audience-label {
+  margin: 0;
+  color: var(--teal-deep);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.audience-luxury {
+  background: linear-gradient(145deg, #ffd8a8, #ffefc7);
+}
+
+.audience-leisure {
+  background: linear-gradient(145deg, #c5f0d5, #ebfff0);
+}
+
+.audience-corporate {
+  background: linear-gradient(145deg, #d8e4ff, #eef3ff);
+}
+
+.audience-groups {
+  background: linear-gradient(145deg, #ffe1dc, #fff0eb);
+}
+
+.audience-cities {
+  background: linear-gradient(145deg, #f7dfb0, #fff2d4);
+}
+
+.audience-global {
+  background: linear-gradient(145deg, #d3f0f4, #edfafe);
+}
+
+.audience-ota {
+  background: linear-gradient(145deg, #eadbff, #f5efff);
+}
+
+.audience-performance {
+  background: linear-gradient(145deg, #ffe0b8, #fff3dd);
 }
 
 .proposal-tabs {
@@ -408,6 +453,10 @@ body::before {
   border-radius: var(--radius-xl);
   background: rgba(255, 251, 240, 0.8);
   box-shadow: var(--shadow);
+}
+
+.audience-section + .proposal-tabs {
+  padding-top: 42px;
 }
 
 .tab-buttons {
@@ -790,7 +839,8 @@ body::before {
   .timeline,
   .screens-grid,
   .sample-grid,
-  .copy-samples-grid {
+  .copy-samples-grid,
+  .audience-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -839,6 +889,14 @@ body::before {
     padding: 24px;
   }
 
+  .audience-section + .proposal-tabs {
+    padding-top: 30px;
+  }
+
+  .audience-card {
+    min-height: 150px;
+  }
+
   .tab-buttons {
     flex-wrap: nowrap;
     overflow-x: auto;
@@ -874,6 +932,10 @@ body::before {
     padding: 22px;
   }
 
+  .audience-section + .proposal-tabs {
+    padding-top: 18px;
+  }
+
   .sample-tabs {
     padding: 20px;
   }
@@ -883,7 +945,8 @@ body::before {
   .timeline,
   .screens-grid,
   .sample-grid,
-  .copy-samples-grid {
+  .copy-samples-grid,
+  .audience-grid {
     grid-template-columns: 1fr;
   }
 
@@ -894,6 +957,16 @@ body::before {
   .hero h2 {
     max-width: none;
     font-size: clamp(1.7rem, 8vw, 2.4rem);
+  }
+
+  .audience-section {
+    padding-top: 52px;
+    padding-bottom: 16px;
+  }
+
+  .audience-card {
+    min-height: auto;
+    padding: 20px 18px;
   }
 
   .hero-copy {
